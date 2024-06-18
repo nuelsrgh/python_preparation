@@ -23,4 +23,3 @@ if result < 1:
     print("Kid is too small.")
 else:
     print("Kid can use the slide.")
-

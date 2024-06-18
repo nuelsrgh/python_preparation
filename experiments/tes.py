@@ -1,8 +1,4 @@
-def calculate_time(h,g=9.80665):
-    t = (2 * h / g) ** 0.5
+import functions
 
-    return t
-
-
-time = calculate_time(100)
-print(time)
+nr_of_periods = functions.count("Trees are good. Grass. . is green")
+print(nr_of_periods)

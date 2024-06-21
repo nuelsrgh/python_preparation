@@ -1,18 +1,23 @@
 import FreeSimpleGUI as sg
 
-label = sg.Text("What are dolphins?")
-option1 = sg.Radio("Amphibians", group_id="question1")
-option2 = sg.Radio("Fish", group_id="question1")
-option3 = sg.Radio("Mammals", group_id="question1")
-option4 = sg.Radio("Birds", group_id="question1")
+label1 = sg.Text("Enter feet:")
+input1 = sg.Input(key="feet")
 
-window = sg.Window("File Compressor",
-                   layout=[[label],
-                           [option1],
-                           [option2],
-                           [option3],
-                           [option4],
-                           ])
+label2 = sg.Text("Enter inches:")
+input2 = sg.Input(key="inches")
 
-window.read()
+output_label = sg.Text("", key="output")
+button = edit_button = sg.Button("Convert")
+window = sg.Window("Convertor",
+                   layout=[[label1, input1], [label2, input2], [button, output_label]])
+
+while True:
+    event, values = window.read()
+    feet = float(values["feet"])
+    inches = float(values["inches"])
+
+    result = feet * 0.3048 + inches * 0.0254
+
+    window["output"].update(value=f"{result} m", text_color="white")
+
 window.close()

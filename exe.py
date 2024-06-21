@@ -1,7 +1,5 @@
 import FreeSimpleGUI as sg
 
-import FreeSimpleGUI as sg
-
 label = sg.Text("What are dolphins?")
 option1 = sg.Radio("Amphibians", group_id="question1")
 option2 = sg.Radio("Fish", group_id="question1")
